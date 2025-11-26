@@ -1,0 +1,19 @@
+console.log("Begin");
+setTimeout(() => {
+  console.log("Timeout Task");
+}, 0);
+Promise.resolve().then(() => {
+  console.log("Promise Task");
+});
+console.log("End");
+
+
+//Output:
+Begin
+End
+Promise Task
+Timeout Task
+
+//Explanation :
+This order is a fundamental aspect of the JavaScript runtime environment's concurrency model, 
+which uses an event loop, a call stack, and different task queues (microtasks and macrotasks/tasks) to manage execution. 
